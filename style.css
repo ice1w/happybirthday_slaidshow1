@@ -1,51 +1,65 @@
+:root {
+    --neon-pink: #ff007f;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body, html { 
-    width: 100%; height: 100%; 
-    background: #000; overflow: hidden; 
-    font-family: 'Arial', sans-serif;
+body, html {
+    width: 100%; height: 100%;
+    background: #000; overflow: hidden;
+    font-family: 'Arial Black', sans-serif;
 }
 
-#matrix-screen, #gift-screen {
+/* Кнопка старта */
+#music-btn {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; color: #fff; border: 3px solid var(--neon-pink);
+    padding: 20px 40px; cursor: pointer; background: #000;
+    border-radius: 50px; font-weight: bold; font-size: 1.5rem;
+    box-shadow: 0 0 20px var(--neon-pink);
+    transition: 0.3s;
+}
+
+#canvas-container { position: relative; width: 100%; height: 100%; }
+
+/* Текст отсчета (уменьшен до 12vw) */
+#text-overlay {
+    position: absolute; top: 40%; left: 40%;
+    transform: translate(-50%, -50%);
+    color: #fff; font-size: 8vw; font-weight: 800;
+    text-align: center; 
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 40px var(--neon-pink);
+    z-index: 10; opacity: 0; pointer-events: none;
+}
+
+/* Экран галактики */
+#galaxy-screen {
     position: absolute; top: 0; left: 0;
     width: 100%; height: 100%;
+    background: radial-gradient(circle at center, #1b2735 0%, #000 100%);
+    display: none; opacity: 0; perspective: 1500px;
 }
 
-#gift-screen {
-    display: none;
-    background: radial-gradient(circle at bottom, #1B2735 0%, #090A0F 100%);
-    opacity: 0;
+#particles-canvas { position: absolute; top: 0; left: 0; z-index: 1; }
+#photo-container { position: absolute; width: 100%; height: 100%; z-index: 2; }
+
+/* Уменьшенные фото-карточки */
+.photo-frame {
+    position: absolute; width: 110px; height: 150px;
+    background: #fff; padding: 6px 6px 20px 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+    top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0);
+    opacity: 0; border-radius: 3px;
 }
 
-#overlay-text {
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Финальный текст */
+#final-text {
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    color: #ff007f; font-size: clamp(3rem, 10vw, 6rem);
-    font-weight: bold; text-align: center;
-    text-shadow: 0 0 20px #ff007f;
-    z-index: 100; pointer-events: none;
-}
-
-.star {
-    position: absolute; background: white;
-    border-radius: 50%; opacity: 0.5;
-    animation: twinkle var(--duration) infinite;
-}
-
-@keyframes twinkle {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
-}
-
-.photo-card {
-    position: absolute;
-    width: 110px; height: 140px;
-    background: #fff; padding: 5px 5px 15px 5px;
-    border-radius: 3px; box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-    opacity: 0; transform: scale(0);
-}
-
-.photo-card img {
-    width: 100%; height: 100%;
-    object-fit: cover; border-radius: 2px;
+    color: white; font-size: 5rem; font-weight: 900;
+    text-shadow: 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
+    z-index: 100; pointer-events: none; text-align: center;
 }

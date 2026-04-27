@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Gift</title>
-    <link rel="stylesheet" href="style.css">
+    <title>С днем рождения! ❤️</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="matrix-screen">
-        <canvas id="matrixCanvas"></canvas>
-        <div id="overlay-text"></div>
-    </div>
+    <button id="music-btn">ЗАПУСТИТЬ</button>
 
-    <div id="gift-screen">
-        <div id="photo-heart-container"></div>
-    </div>
-
-    <audio id="bgMusic" loop>
+    <audio id="bg-music" loop>
         <source src="music.mp3" type="audio/mpeg">
     </audio>
+
+    <div id="canvas-container">
+        <canvas id="matrix-canvas"></canvas>
+        <div id="text-overlay"></div>
+    </div>
+
+    <div id="galaxy-screen">
+        <canvas id="particles-canvas"></canvas>
+        <div id="photo-container"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
