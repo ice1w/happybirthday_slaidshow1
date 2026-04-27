@@ -1,7 +1,7 @@
 const config = {
     photosCount: 20,
     photoFormat: ".jpg",
-    messages: ["3", "2", "1", "HAPPY", "BIRTHDAY", "TO", "VERA"],
+    messages: ["3", "2", "1", "С ДНЕМ", "РОЖДЕНИЯ", "ВЕРА💘"],
     matrixColor: "#ff007f",
     particleColor: "#ff0044",
     heartScale: 20 // Размер сердца
